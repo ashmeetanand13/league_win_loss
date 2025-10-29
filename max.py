@@ -47,8 +47,8 @@ LEAGUES = {
     "Slovak Super Liga": 69,              # Slovakia
 }
 
-@st.cache_data(ttl=3600)
-def scrape_league(league_name, delay=3):
+@st.cache_data(ttl=86400)
+def scrape_league(league_name, delay=10):
     """Scrape matches from FBref using dynamic column detection"""
     league_id = LEAGUES[league_name]
     url = f"https://fbref.com/en/comps/{league_id}/schedule/"
